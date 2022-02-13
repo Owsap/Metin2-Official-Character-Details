@@ -5,7 +5,7 @@
 		PyCallClassMemberFunc(m_poHandler, "ShowToolTip", BuildEmptyTuple());
 		
 ///Add
-#if defined(ENABLE_DETAILS_UI)
+#if defined(__BL__DETAILS_UI__)
 		PyCallClassMemberFunc(m_poHandler, "OnMouseOverIn", BuildEmptyTuple());
 #endif
 
@@ -13,6 +13,6 @@
 		PyCallClassMemberFunc(m_poHandler, "HideToolTip", BuildEmptyTuple());
 		
 ///Add
-#if defined(ENABLE_DETAILS_UI)
+#if defined(__BL__DETAILS_UI__)
 		PyCallClassMemberFunc(m_poHandler, "OnMouseOverOut", BuildEmptyTuple());
 #endif

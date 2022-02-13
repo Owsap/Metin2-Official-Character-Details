@@ -1,1 +1,1 @@
-#define ENABLE_DETAILS_UI
+#define __BL__DETAILS_UI__

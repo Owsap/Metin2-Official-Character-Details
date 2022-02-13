@@ -6,7 +6,7 @@
 #endif
 
 ///Add
-#if defined(ENABLE_DETAILS_UI)
+#if defined(__BL__DETAILS_UI__)
 	PyModule_AddIntConstant(poModule, "ENABLE_DETAILS_UI", true);
 #else
 	PyModule_AddIntConstant(poModule, "ENABLE_DETAILS_UI", false);
