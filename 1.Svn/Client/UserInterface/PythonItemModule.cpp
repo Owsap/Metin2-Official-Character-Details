@@ -137,11 +137,11 @@ PyObject* itemGetApplyPoint(PyObject* poSelf, PyObject* poArgs)
 	if (!PyTuple_GetByte(poArgs, 0, &bApplyType))
 		return Py_BuildException();
 
-	const BYTE bApplyPoinyType = __GetApplyPointType(bApplyType);
-	if (bApplyPoinyType == POINT_MAX_NUM)
+	const BYTE bApplyPointType{ __GetApplyPointType(bApplyType) };
+	if (bApplyPointType == POINT_MAX_NUM)
 		TraceError("itemGetApplyPoint - Cannot find Apply Point Type(Apply Type: %d)", bApplyType);
 	
-	return Py_BuildValue("i", bApplyPoinyType);
+	return Py_BuildValue("i", bApplyPointType);
 }
 #endif
 
