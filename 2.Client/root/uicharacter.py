@@ -9,6 +9,7 @@ if app.ENABLE_DETAILS_UI:
 #Change
 	def __init__(self):
 		if app.ENABLE_DETAILS_UI:
+			self.chMainWndPos = (0, 0)
 			self.chDetailsWnd = None
 			self.isOpenedDetailsWnd = False
 		ui.ScriptWindow.__init__(self)
@@ -54,6 +55,7 @@ if app.ENABLE_DETAILS_UI:
 			
 		def __ClickExpandButton(self):			
 			if not self.chDetailsWnd:
+				(x, y) = self.chMainWndPos
 				self.chDetailsWnd = uiCharacterDetails.CharacterDetailsUI(self)
 				self.chDetailsWnd.Show()
 			else:
@@ -68,6 +70,7 @@ if app.ENABLE_DETAILS_UI:
 			self.ExpandBtn.Show()
 			
 		def OnMoveWindow(self, x, y):
+			self.chMainWndPos = (x, y)
 			if self.chDetailsWnd:
 				self.chDetailsWnd.AdjustPosition(x, y)
 
